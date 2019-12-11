@@ -127,7 +127,7 @@ void test_dec_time(size_t N) {
 	std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
 	start = std::chrono::high_resolution_clock::now();
 	for (int i = 0; i < N; i++) {
-		test_tree_1.insert(vec[i], vec[i]*10);
+		test_tree_1.insert(vec[i], rand()%(N-1));
 	}
 	end = std::chrono::high_resolution_clock::now();
 	std::cout << "Fill tree, N =" << N << ", time:" << std::chrono::duration_cast<std::chrono::milliseconds>
@@ -164,7 +164,7 @@ void test_dec_time(size_t N) {
 	start = std::chrono::high_resolution_clock::now();
 	for (int i = 0; i < N; i++) {
 		
-		test_tree_2.insert(vec2[i], vec2[i]*10);
+		test_tree_2.insert(vec2[i], rand() % (N - 1));
 	}
 	end = std::chrono::high_resolution_clock::now();
 	std::cout << "Fill tree, N =" << N << ", time:" << std::chrono::duration_cast<std::chrono::milliseconds>
